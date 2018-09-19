@@ -1,6 +1,31 @@
 # flask-tiny-url-shortener
 URL Shortener using Python Flask backed by SimpleDB
 
+## Pre-Requirements
+
+Install dependencies:
+
+```
+$ pip install -r requirements.txt
+```
+
+Create SimpleDB Domain:
+
+```
+$ python
+>>> import boto3
+>>> c = boto3.Session(region_name='eu-west-1', profile_name='dev')
+>>> sdb = c.client('sdb')
+>>> sdb.create_domain(DomainName='tiny-url')
+```
+
+Run Server:
+
+```
+$ python app.py
+* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+```
+
 ## Screenshots
 
 Enter your URL to be shortened:
