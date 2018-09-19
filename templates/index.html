@@ -1,1 +1,21 @@
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+      <title>URL Shortner</title>
+	    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+      <center>
+        <div class="button_box">
+	        <center>
+            <h2>DNS Shortener</h2>
+          </center>
+	        <br>
+	        <form class="form-wrapper-2 cf" action="/result" method="post">
+	          <input type="text" name="input" placeholder="Link to be shortened" required autofocus>
+ 	          <button type="submit">get tiny</button>
+          </form>
+	      </div>
+      </center>
+    </body>
+</html>
