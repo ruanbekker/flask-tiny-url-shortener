@@ -1,8 +1,12 @@
+import boto3
 from flask import Flask
 from random import choice, randint
 from string import ascii_letters
 
 tiny_baseurl = 'https://tiny.domain.com/t'
+
+c = boto3.Session(region_name='eu-west-1', profile_name='default')
+sdb = c.client('sdb')
 
 app = Flask(__name__)
 
