@@ -28,6 +28,15 @@ def put_url(destination_url):
     )
     return tiny_url
 
+def get_url(tiny_url):
+    tiny_id = tiny_url.split('/')[-1]
+    item = sdb.get_attributes(
+        DomainName=sdb_domain, 
+        ItemName=tiny_id
+    )
+    response = item.get('Attributes')[0].get('Value')
+    return response
+
 @app.route('/')
 def main():
     return 'ok'
