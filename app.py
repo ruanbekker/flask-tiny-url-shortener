@@ -2,6 +2,8 @@ from flask import Flask
 from random import choice, randint
 from string import ascii_letters
 
+tiny_baseurl = 'https://tiny.domain.com/t'
+
 app = Flask(__name__)
 
 def generate_tiny():
