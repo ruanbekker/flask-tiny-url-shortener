@@ -50,6 +50,11 @@ def result():
     else:
         message = 'URL needs to include http or https'
         return render_template('result.html', tiny_url=message)
+    
+@app.route('/t/<tinyid>')
+def redirect_it(tinyid):
+    full_url = get_url(tinyid)
+    return redirect(full_url)
 
 if __name__ == '__main__':
     app.run()
