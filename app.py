@@ -1,5 +1,5 @@
 import boto3
-from flask import Flask
+from flask import Flask, render_template
 from random import choice, randint
 from string import ascii_letters
 
@@ -39,7 +39,7 @@ def get_url(tiny_url):
 
 @app.route('/')
 def main():
-    return 'ok'
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run()
