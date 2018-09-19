@@ -41,5 +41,15 @@ def get_url(tiny_url):
 def main():
     return render_template('index.html')
 
+@app.route('/result', methods=['GET', 'POST'])
+def result():
+    url = request.form["input"]
+    if 'http' in url.split('.')[0]:
+        tiny_url = put_url(url)
+        return render_template('result.html', tiny_url=tiny_url)
+    else:
+        message = 'URL needs to include http or https'
+        return render_template('result.html', tiny_url=message)
+
 if __name__ == '__main__':
     app.run()
